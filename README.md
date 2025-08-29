@@ -15,8 +15,8 @@ Pastikan server sudah ter-install:
 
 ### 1. Clone Repositori
 ```bash
-git clone "https://github.com/DanaPutra133/express-uploader_img"
-cd "express-uploader_img"
+git clone https://github.com/DanaPutra133/express-uploader_img
+cd express-uploader_img
 ```
 
 ### 2. Buat File Environment (.env)
