@@ -1,4 +1,4 @@
-// src/controllers/uploadController.js
+
 
 const uploadImage = (req, res) => {
     if (!req.file) {
@@ -12,7 +12,7 @@ const uploadImage = (req, res) => {
     res.status(201).json({
         message: 'Gambar berhasil di-upload!',
         url: imageUrl
-    });
+    });        
 };
 
 module.exports = {
