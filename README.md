@@ -1,10 +1,9 @@
-# 📦 Express Uploader
-
+# Express Uploader
 Layanan sederhana untuk upload gambar menggunakan **Docker** & **Docker Compose**.
 
 ---
 
-## 📋 Prasyarat
+## Prasyarat
 Pastikan server sudah ter-install:
 
 - [Docker](https://docs.docker.com/get-docker/)
@@ -12,7 +11,7 @@ Pastikan server sudah ter-install:
 
 ---
 
-## 🚀 Instalasi & Konfigurasi Awal
+## Instalasi & Konfigurasi Awal
 
 ### 1. Clone Repositori
 ```bash
@@ -39,7 +38,6 @@ docker-compose up -d --build
 ```
 
 ✅ Layanan sekarang berjalan dan siap menerima permintaan.
-
 ---
 
 ## 📖 Dokumentasi API
@@ -71,7 +69,7 @@ docker-compose up -d --build
 
 ---
 
-## 🛠️ Manajemen Operasional
+## Manajemen Operasional
 
 Menjalankan aplikasi di latar belakang:
 ```bash
@@ -100,7 +98,7 @@ docker-compose restart
 
 ---
 
-## 📦 Backup, Restore, dan Migrasi
+## Backup, Restore, dan Migrasi
 
 ### Backup
 
@@ -152,7 +150,3 @@ docker-compose up -d
   - `X-Internal-Key`
   - `X-Forwarded-Proto` (agar URL hasil upload menggunakan `https://`).
 
----
-
-## 📝 Lisensi
-Lisensi sesuai kebutuhan Anda (MIT, Apache, dll).
