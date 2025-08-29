@@ -17,6 +17,8 @@ if (!fs.existsSync(uploadsDir)) {
 const app = express();
 const port = 3000;
 
+app.set('trust proxy', 1);
+
 app.use(cors());
 app.use(morgan('dev'));
 
