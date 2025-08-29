@@ -1,11 +1,17 @@
-# docker-compose.yml
-version: '3.8' 
+version: '3.3'
 
 services:
   uploader-api:
     build: .
     container_name: uploader_container
     ports:
-      - "3000:3000" 
+      - "3000:3000"
     environment:
       - INTERNAL_API_KEY=${INTERNAL_API_KEY}
+    # ==> BAGIAN YANG HILANG (1): Menghubungkan volume ke container
+    volumes:
+      - uploader_data:/app/uploads
+
+# ==> BAGIAN YANG HILANG (2): Mendeklarasikan named volume
+volumes:
+  uploader_data:
