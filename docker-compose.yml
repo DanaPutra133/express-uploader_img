@@ -11,6 +11,7 @@ services:
     # ==> BAGIAN YANG HILANG (1): Menghubungkan volume ke container
     volumes:
       - uploader_data:/app/uploads
+    restart: unless-stopped
 
 # ==> BAGIAN YANG HILANG (2): Mendeklarasikan named volume
 volumes:
