@@ -29,20 +29,21 @@ if (!fs.existsSync(LOG_FILE_PATH)) {
 // GET ke endpoint manapun, termasuk /stats, tidak akan dicatat ke log
 function requestLogger(req, res, next) {
     if (
-        (req.method === 'POST' && req.path === '/upload') ||
-        (req.method === 'GET' && req.path !== '/api/stats')
+      (req.method === "POST" && req.path === "/upload") ||
+      (req.method === "GET" && req.path !== "/api/stats") &&
+      !(req.method === 'GET' && req.path === '/')
     ) {
-        const logEntry = {
-            timestamp: Date.now(),
-            method: req.method
-        };
-        try {
-            const logs = JSON.parse(fs.readFileSync(LOG_FILE_PATH, 'utf-8'));
-            logs.push(logEntry);
-            fs.writeFileSync(LOG_FILE_PATH, JSON.stringify(logs, null, 2));
-        } catch (err) {
-            fs.writeFileSync(LOG_FILE_PATH, JSON.stringify([logEntry], null, 2));
-        }
+      const logEntry = {
+        timestamp: Date.now(),
+        method: req.method,
+      };
+      try {
+        const logs = JSON.parse(fs.readFileSync(LOG_FILE_PATH, "utf-8"));
+        logs.push(logEntry);
+        fs.writeFileSync(LOG_FILE_PATH, JSON.stringify(logs, null, 2));
+      } catch (err) {
+        fs.writeFileSync(LOG_FILE_PATH, JSON.stringify([logEntry], null, 2));
+      }
     }
     next();
 }
